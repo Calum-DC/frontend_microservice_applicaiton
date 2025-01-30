@@ -1,4 +1,5 @@
 import os
+from crypt import methods
 from datetime import datetime
 
 import boto3
@@ -59,7 +60,9 @@ def submit_bug_report():
 
     return render_template('receipt.html', title=title, description=description, priority=receipt_priority, timestamp=timestamp)
 
-
+@app.route('/health', methods=["GET"])
+def health_check():
+    return "Everything is A-OK"
 
 if __name__ == "__main__":
     app.run(debug=True)
