@@ -21,7 +21,8 @@ jobs:
             AWS_DEFAULT_REGION: ${{ secrets.AWS_REGION }}
 
           run: |
-            aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin  ${{ secrets.ECR_REPOSITORY }}
+            aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${{ secrets.ECR_REPOSITORY }}
+
 
         - name: Build frontend-micro container
           run: |
