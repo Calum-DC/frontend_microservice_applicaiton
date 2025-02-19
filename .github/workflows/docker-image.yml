@@ -29,7 +29,7 @@ jobs:
             
         - name: tag container for ECR
           run: |
-            docker tag frontend-micro-container:${{ github.ref_name }} ${{ secrets.ECR_URL }}:${{ github.ref_name }}
+            docker tag frontend-micro-container:${{ github.ref_name }} ${{ secrets.ECR_REPOSITORY }}:${{ github.ref_name }}
  
         - name: Push labs-now container to ECR
           run: |
