@@ -1,7 +1,5 @@
 import os
-from crypt import methods
 from datetime import datetime
-
 import boto3
 from flask import Flask, render_template, request, jsonify, json, make_response
 from dotenv import load_dotenv
@@ -65,4 +63,4 @@ def health_check():
     return "Everything is A-OK"
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0')
