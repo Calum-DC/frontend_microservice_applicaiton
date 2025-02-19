@@ -33,4 +33,4 @@ jobs:
  
         - name: Push labs-now container to ECR
           run: |
-            docker push ${{ secrets.ECR_URL }}:${{ github.ref_name }}
+            docker push ${{ secrets.ECR_REPOSITORY }}:${{ github.ref_name }}
