@@ -1,22 +1,22 @@
-name: SonarCloud Analysis
+# name: SonarCloud Analysis
 
-on:
-  push:
-    branches:
-      - main 
-jobs:
-  sonarqube:
-    name: SonarQube
-    runs-on: ubuntu-latest
+# on:
+#   push:
+#     branches:
+#       - main 
+# jobs:
+#   sonarqube:
+#     name: SonarQube
+#     runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0  
+#     steps:
+#       - uses: actions/checkout@v3
+#         with:
+#           fetch-depth: 0  
 
-      - name: SonarQubeScan
-        uses: SonarSource/sonarqube-scan-action@v4
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  
-          SONAR_ORG: ${{ secrets.SONAR_ORG }}  
+#       - name: SonarQubeScan
+#         uses: SonarSource/sonarqube-scan-action@v4
+#         env:
+#           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+#           SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  
+#           SONAR_ORG: ${{ secrets.SONAR_ORG }}  
