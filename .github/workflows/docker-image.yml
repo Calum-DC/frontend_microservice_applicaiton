@@ -1,10 +1,10 @@
-# name: Deploy to ECR
+name: Deploy to ECR
 
-# on:
-#   workflow_run:
-#     workflows: ["SonarCloud Analysis"]
-#     types: 
-#       - completed
+on:
+  workflow_run:
+    workflows: ["sonarcloud"]
+    types: 
+      - completed
 
 
 jobs:
