@@ -8,6 +8,7 @@ jobs:
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
+    secrets: inherit 
 
     steps:
       - uses: actions/checkout@v3
