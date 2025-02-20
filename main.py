@@ -7,10 +7,7 @@ from dotenv import load_dotenv
 app = Flask(__name__)
 
 
-# sqs_client = boto3.client('sqs', region_name=os.getenv('AWS_REGION'))
-
-# test fail
-sqs_client = boto3.client('sqs', region_name="us-east-1", aws_access_key_id="AKIA....", aws_secret_access_key="secretkey....")
+sqs_client = boto3.client('sqs', region_name=os.getenv('AWS_REGION'))
 
 
 # Dictionary for SQS queue urls and associated priorities
