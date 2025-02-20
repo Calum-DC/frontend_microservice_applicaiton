@@ -8,7 +8,6 @@ jobs:
   sonarqube:
     name: SonarQube
     runs-on: ubuntu-latest
-    secret: inherit 
 
     steps:
       - uses: actions/checkout@v3
@@ -17,8 +16,7 @@ jobs:
 
       - name: SonarQubeScan
         uses: SonarSource/sonarqube-scan-action@v4
-        with:
-          sonar.projectKey: ${{ secrets.SONAR_PROJECT_KEY }}  
-          sonar.organization: ${{ secrets.SONAR_ORG }}  
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_PROJECT_KEY: ${{ secrets.SONAR_PROJECT_KEY }}  
+          SONAR_ORG: ${{ secrets.SONAR_ORG }}  
