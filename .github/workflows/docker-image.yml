@@ -1,10 +1,12 @@
 name: Deploy to ECR
 
 on:
-    push:
-      branches:
-        - main
-        
+  workflow_run:
+    workflows: ["SonarCloud Analysis"]
+    types: 
+      - completed
+
+
 jobs:
     push-to-ecr:
         runs-on: ubuntu-latest
