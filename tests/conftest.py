@@ -5,6 +5,7 @@ from moto import mock_aws
 from main import app
 
 REGION='us-east-1'
+AWS_REGION='us-east-1'
 @pytest.fixture(scope='function')
 def aws_credentials():
     """Mock AWS credentials for moto moto"""
@@ -21,5 +22,5 @@ def client():
 @pytest.fixture(scope='function')
 def sqs_client(aws_credentials):
     with mock_aws():
-        yield boto3.client('sqs', region_name=REGION)
+        yield boto3.client('sqs', region_name=us-east-1)
 
