@@ -1,7 +1,7 @@
 import os
 import pytest
 import boto3
-from moto import mock_sqs
+from moto import mock_aws
 from main import app
 
 REGION='us-east-1'
@@ -21,6 +21,6 @@ def client():
 
 @pytest.fixture(scope='function')
 def sqs_client(aws_credentials):
-    with mock_sqs():
+    with mock_aws():
         yield boto3.client('sqs', region_name=REGION)
 
