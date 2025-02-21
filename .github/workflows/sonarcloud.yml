@@ -2,7 +2,7 @@ name: sonarcloud
 
 on:
   workflow_run:
-    workflows: ["tests"]
+    workflows: ["Python Test"]
     types: 
       - completed
 
