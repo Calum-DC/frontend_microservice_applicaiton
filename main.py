@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 
 app = Flask(__name__)
 
+load_dotenv()
 
 sqs_client = boto3.client('sqs', region_name=os.getenv('AWS_REGION'))
 
@@ -39,6 +40,7 @@ def submit_bug_report():
     priority = request.form["priority"]
     timestamp = datetime.now().strftime("%d-%m-%y at %H:%M:%S")
     receipt_priority = priority_tag(priority)
+    
     # Check SQS queue and assign correct one
     queue_url = queue_urls.get(priority)
     if not queue_url:

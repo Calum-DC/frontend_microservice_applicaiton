@@ -2,7 +2,7 @@ name: Docker Image Scan with Trivy
 
 on:
   workflow_run:
-    workflows: ["Python Test"]
+    workflows: ["Python Testss"]
     types: 
       - completed
 
