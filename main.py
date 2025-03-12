@@ -6,7 +6,6 @@ from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-load_dotenv()
 
 sqs_client = boto3.client('sqs', region_name=os.getenv('AWS_REGION'))
 
