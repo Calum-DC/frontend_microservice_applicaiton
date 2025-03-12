@@ -7,8 +7,6 @@ ENV AWS_REGION=""
 ENV AWS_ACCESS_KEY_ID=""
 ENV AWS_SECRET_ACCESS_KEY=""
 
-
-
 WORKDIR /frontend_microservice_application
 COPY . /frontend_microservice_application
 RUN pip install -r requirements.txt
